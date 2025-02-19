@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.sistemalogin.exception.InvalidUserException;
 
@@ -35,6 +36,8 @@ public class LoginControllers extends HttpServlet {
 		if (!nomeUsuario.trim().equals("clessio") || !senhaUsuario.trim().equals("123")) {
 			throw new InvalidUserException("Login ou Senha inválidos");
 		}
+		HttpSession session = request.getSession();
+		session.setAttribute("usuarioautenticado", nomeUsuario);
 
 	}
 

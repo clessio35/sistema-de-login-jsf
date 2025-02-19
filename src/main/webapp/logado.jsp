@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,16 @@
 <title>Logado</title>
 </head>
 <body>
-<h2>Logado com Sucesso</h2>
+	<%
+	String nomeUsuario = (String) session.getAttribute("usuarioautenticado");
+	if (nomeUsuario == null) {
+		throw new ServletException("Nenhum usuário logado");
+	}
+	%>
+
+	Seja Bem Vindo:
+	<%=nomeUsuario%>
+	<a href="remover.jsp"> Sair</a>
+	<h2>Logado com Sucesso</h2>
 </body>
 </html>
