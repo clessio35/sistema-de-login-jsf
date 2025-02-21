@@ -18,5 +18,8 @@
 	<%=nomeUsuario%>
 	<a href="remover.jsp"> Sair</a>
 	<h2>Logado com Sucesso</h2>
+	<form name="formLogin" action="cadastrarLogin.jsp" method="post">
+		<td colspan="2"><input type="submit" value="Cadastrar" /></td>
+	</form>
 </body>
 </html>
